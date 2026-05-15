@@ -6,10 +6,10 @@
 # for the Demo-Factory within OpenFactory.
 #
 # Notes:
-# - This script assumes factory-manager container is available
+# - This script assumes factory-manager-lab-usine container is available
 # ==============================================================================
 
-OFA_CONTAINER_NAME="factory-manager"
+OFA_CONTAINER_NAME="factory-manager-lab-usine"
 
 echo "🔍 Checking if container '$OFA_CONTAINER_NAME' exists and is running..."
 
@@ -24,17 +24,9 @@ echo
 
 set -e  # Exit immediately if any command fails
 
-# Deploy devices from Assembly on OpenFactory
+# Deploy devices from PLT-3013 on OpenFactory
 echo "🚀 Deploying Assembly area assets to OpenFactory"
-docker exec "$OFA_CONTAINER_NAME" ofa device up demo-factory/assembly
-
-# Deploy Machining/WC001 on OpenFactory
-echo "🚀 Deploying Machining/WC001 assets to OpenFactory"
-docker exec "$OFA_CONTAINER_NAME" ofa device up demo-factory/machining/WC001
-
-# Deploy Machining/WC002 on OpenFactory
-echo "🚀 Deploying Machining/WC002 assets to OpenFactory"
-docker exec "$OFA_CONTAINER_NAME" ofa device up demo-factory/machining/WC002
+docker exec "$OFA_CONTAINER_NAME" ofa device up demo-factory/plt-3013/dust-trak.yml
 
 echo
 echo "✅ Deployment completed successfully!"

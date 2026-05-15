@@ -6,7 +6,7 @@ devices:
       type: opcua 
       
       server:
-        uri: opc.tcp://host.docker.internal:4841
+        uri: opc.tcp://100.79.119.81:4841
 
       variables:
         pm1_concentration:

@@ -50,7 +50,7 @@ source .ofaenv
 set +a
 
 # Shutdown factory manager
-docker rm -f factory-manager
+docker rm -f factory-manager-lab-usine
 
 # Shutdown virtual sensors
 platform/scripts/virtual_devices/teardown_virtual_devices.sh

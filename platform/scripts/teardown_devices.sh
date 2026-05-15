@@ -1,15 +1,15 @@
 #!/bin/bash
 # ==============================================================================
-# Teardown devices of Demo-Factory
+# Teardown devices of Lab-Usine
 # ------------------------------------------------------------------------------
 # This teardown script handles the removal of physical and virtual devices
-# for the Demo-Factory within OpenFactory.
+# for the Lab-Usine within OpenFactory.
 #
 # Notes:
-# - This script assumes factory-manager container is available
+# - This script assumes factory-manager-lab-usine container is available
 # ==============================================================================
 
-OFA_CONTAINER_NAME="factory-manager"
+OFA_CONTAINER_NAME="factory-manager-lab-usine"
 
 echo "🔍 Checking if container '$OFA_CONTAINER_NAME' exists and is running..."
 
@@ -20,21 +20,12 @@ if ! docker ps --format '{{.Names}}' | grep -q "^${OFA_CONTAINER_NAME}$"; then
 fi
 
 echo "✅ Container '$OFA_CONTAINER_NAME' is running. Starting teardown..."
-echo
 
 set -e  # Exit immediately if any command fails
 
 # Teardown devices from Assembly on OpenFactory
 echo "🧹 Tearing down Assembly area assets from OpenFactory"
-docker exec "$OFA_CONTAINER_NAME" ofa device down demo-factory/assembly
-
-# Teardown Machining/WC001 on OpenFactory
-echo "🧹 Tearing down Machining/WC001 assets from OpenFactory"
-docker exec "$OFA_CONTAINER_NAME" ofa device down demo-factory/machining/WC001
-
-# Teardown Machining/WC002 on OpenFactory
-echo "🧹 Tearing down Machining/WC002 assets from OpenFactory"
-docker exec "$OFA_CONTAINER_NAME" ofa device down demo-factory/machining/WC002
+docker exec "$OFA_CONTAINER_NAME" ofa device down demo-factory/plt-3013/dust-trak.yml
 
 echo
 echo "✅ Teardown completed successfully!"

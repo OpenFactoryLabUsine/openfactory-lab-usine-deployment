@@ -63,10 +63,10 @@ else
 fi
 
 # OpenFactory CLI
-echo "⚙️  Setting up factory-manager ..."
+echo "⚙️  Setting up factory-manager-lab-usine ..."
 docker pull ghcr.io/openfactoryio/ofa-cli:${OPENFACTORY_VERSION}
 docker run --detach \
-    --name factory-manager \
+    --name factory-manager-lab-usine \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --group-add $(stat -c '%g' /var/run/docker.sock) \
     --env HOST_IP=${HOST_IP} \
@@ -89,7 +89,7 @@ else
 
   # Configure stream processing topology
   echo "🚀 Deploying Kafka stream processing topology"
-  docker exec factory-manager ofa setup-kafka --ksqldb-server ${KSQLDB_URL}
+  docker exec factory-manager-lab-usine ofa setup-kafka --ksqldb-server ${KSQLDB_URL}
 fi
 
 # Deploy Fan-out layer
@@ -101,7 +101,7 @@ echo "🚀 Deploying OPC UA Connector"
 docker compose -f platform/docker/opcua-connector/docker-compose.yml up -d
 
 # Deploy virtual Devices
-platform/scripts/virtual_devices/deploy_virtual_devices.sh
+# platform/scripts/virtual_devices/deploy_virtual_devices.sh
 
 # Wait until OPC UA Coordinator is up and running
 YELLOW='\033[33m'
