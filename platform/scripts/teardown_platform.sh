@@ -1,8 +1,8 @@
 #!/bin/bash
 # ==============================================================================
-# Teardown Demo-Factory Platform
+# Teardown Lab-Usine Platform
 # ------------------------------------------------------------------------------
-# This script handles the shutdown and cleanup of the Demo-Factory platform.
+# This script handles the shutdown and cleanup of the Lab-Usine platform.
 #
 # Key behaviors:
 # 1. Environment setup:

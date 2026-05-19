@@ -6,7 +6,7 @@ KAFKA_BROKER=${HOST_IP}:9092
 KSQLDB_URL=http://${HOST_IP}:8088
 
 # OpenFactory UNS schema
-OPENFACTORY_UNS_SCHEMA=demo-factory/uns_schema.yml
+OPENFACTORY_UNS_SCHEMA=lab-usine/uns_schema.yml
 
 # Fan-out layer
 ASSET_ROUTER_URL=http://${HOST_IP}:8002

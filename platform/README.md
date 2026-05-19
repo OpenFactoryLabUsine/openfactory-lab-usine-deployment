@@ -1,6 +1,6 @@
 # Platform
 
-This folder contains the code required to build the infrastructure platform for the Demo-Factory.
+This folder contains the code required to build the infrastructure platform for the Lab-Usine.
 
 The structure is:
 ```

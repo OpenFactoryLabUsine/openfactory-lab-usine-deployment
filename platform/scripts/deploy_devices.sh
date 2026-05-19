@@ -1,9 +1,9 @@
 #!/bin/bash
 # ==============================================================================
-# Deploy devices of Demo-Factory
+# Deploy devices of Lab-Usine
 # ------------------------------------------------------------------------------
 # This deployment script handles the provisioning of physical and virtual devices
-# for the Demo-Factory within OpenFactory.
+# for the Lab-Usine within OpenFactory.
 #
 # Notes:
 # - This script assumes factory-manager-lab-usine container is available
@@ -26,7 +26,7 @@ set -e  # Exit immediately if any command fails
 
 # Deploy devices from PLT-3013 on OpenFactory
 echo "🚀 Deploying Assembly area assets to OpenFactory"
-docker exec "$OFA_CONTAINER_NAME" ofa device up demo-factory/plt-3013/dust-trak.yml
+docker exec "$OFA_CONTAINER_NAME" ofa device up lab-usine/plt-3013/dust-trak.yml
 
 echo
 echo "✅ Deployment completed successfully!"

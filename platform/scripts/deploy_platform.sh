@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# Deploy Demo-Factory Platform
+# Deploy Lab-Usine Platform
 # ------------------------------------------------------------------------------
 # This deployment script handles both interactive use and CI/CD workflows.
 #
@@ -72,7 +72,7 @@ docker run --detach \
     --env HOST_IP=${HOST_IP} \
     --volume $(pwd)/.ofaenv:/home/ofa/.ofaenv:ro \
     --volume $(pwd)/platform:/home/ofa/platform:ro \
-    --volume $(pwd)/demo-factory:/home/ofa/demo-factory:ro \
+    --volume $(pwd)/lab-usine:/home/ofa/lab-usine:ro \
     ghcr.io/openfactoryio/ofa-cli:${OPENFACTORY_VERSION}
 
 # Check if Kafka cluster is already deployed

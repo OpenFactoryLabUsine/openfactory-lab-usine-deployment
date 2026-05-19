@@ -25,7 +25,7 @@ set -e  # Exit immediately if any command fails
 
 # Teardown devices from Assembly on OpenFactory
 echo "🧹 Tearing down Assembly area assets from OpenFactory"
-docker exec "$OFA_CONTAINER_NAME" ofa device down demo-factory/plt-3013/dust-trak.yml
+docker exec "$OFA_CONTAINER_NAME" ofa device down lab-usine/plt-3013/dust-trak.yml
 
 echo
 echo "✅ Teardown completed successfully!"
